@@ -1,9 +1,9 @@
 module "s3" {
-    source "./s3"
+  source = "./s3"
 }
 
 module "rds" {
-    source "./rds"
-    engine_version = "5.7"
-    instance_class = "db.t3.micro"
+  source         = "./rds"
+  engine_version = "5.7"
+  instance_class = ""
 }
