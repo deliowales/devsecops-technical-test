@@ -34,6 +34,23 @@ resource "aws_s3_bucket_website_configuration" "website" {
   }
 }
 
+# To store terraform state
+
+resource "aws_s3_bucket" "terraform_state" {
+  bucket = "terraform-up-and-running-state"
+  versioning {
+    enabled = true
+  }
+  server_side_encryption_configuration {
+    rule {
+      apply_server_side_encryption_by_default {
+        sse_algorithm = "AES256"
+      }
+    }
+  }
+}
+
+
 # Removing because I couldn't get it to work
 #resource "aws_s3_bucket_server_side_encryption_configuration" "example" {
 #  bucket = aws_s3_bucket.mybucket.bucket

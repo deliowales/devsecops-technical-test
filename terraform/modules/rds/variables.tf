@@ -23,5 +23,6 @@ variable "name" {
 variable "passwordx" {
   description = "The password of the website. Variable name is set to passwordx to get around validation"
   type        = string
+  sensitive   = true
   default     = "password12Secret34"
 }
