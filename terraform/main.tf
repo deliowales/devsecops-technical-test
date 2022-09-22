@@ -7,7 +7,3 @@ module "rds" {
   engine_version = "5.7"
   instance_class = ""
 }
-
-module "dynamodb" {
-    source ="./dynamodb"
-}
